@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -13,16 +12,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('progression_user', function (Blueprint $table) {
+        Schema::create('avis_users', function (Blueprint $table) {
             $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users');
-            $table->unsignedBigInteger('id_video_formation');
-            $table->foreign('id_video_formation')->references('id')->on('videos_formation');
-            $table->tinyInteger('Terminee')->default(0);
-            $table->primary(['id_user', 'id_video_formation']);
+            $table->unsignedBigInteger('id_application');
+            $table->foreign('id_application')->references('id')->on('applications');
+            $table->text('commentaire');
             $table->timestamps();
+            $table->primary(['id_user', 'id_application']);
         });
-
     }
 
     /**
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('progression_user');
+        Schema::dropIfExists('avis_users');
     }
 };

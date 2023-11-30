@@ -10,8 +10,8 @@ class Module extends Model
     use HasFactory;
 
     protected $fillable = [
-       'id_formation',  // Identifiant de la formation associée
-       'titre',         // Titre du module
+        'id_formation',  // Identifiant de la formation associée
+        'titre',         // Titre du module
     ];
 
     /**

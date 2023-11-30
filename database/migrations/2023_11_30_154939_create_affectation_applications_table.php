@@ -13,18 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('videos_formation', function (Blueprint $table) {
+        Schema::create('affectation_applications', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_module');
-            $table->foreign('id_module')->references('id')->on('modules');
-            $table->string('titre');
-            $table->string('url');
-            $table->string('duree');
-            $table->integer('ordre');
             $table->timestamps();
         });
     }
-
 
     /**
      * Reverse the migrations.
@@ -33,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('videos_formation');
+        Schema::dropIfExists('affectation_applications');
     }
 };

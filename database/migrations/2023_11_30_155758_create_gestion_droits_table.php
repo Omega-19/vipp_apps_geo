@@ -13,18 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('formation_user', function (Blueprint $table) {
+        Schema::create('gestion_droits', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('formation_id');
-            $table->unsignedBigInteger('user_id');
             $table->timestamps();
-
-            $table->foreign('formation_id')->references('id')->on('formations')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
-
-  
 
     /**
      * Reverse the migrations.
@@ -33,7 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('formation_user');
+        Schema::dropIfExists('gestion_droits');
     }
-
 };

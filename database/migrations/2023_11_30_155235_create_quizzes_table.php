@@ -13,15 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('application_user', function (Blueprint $table) {
+        Schema::create('quizzes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('application_id');
             $table->timestamps();
-
-            // Clés étrangères
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('application_id')->references('id')->on('applications')->onDelete('cascade');
         });
     }
 
@@ -32,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('application_user');
+        Schema::dropIfExists('quizzes');
     }
 };
