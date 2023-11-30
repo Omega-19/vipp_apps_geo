@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\GestionDroit>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
 class GestionDroitFactory extends Factory
 {
@@ -17,7 +17,10 @@ class GestionDroitFactory extends Factory
     public function definition()
     {
         return [
-            //
+            //'id' => $this->faker->uuid,
+            'libelle' => fake()->sentence,
+            'user_id' => App\Model\User::inRandomOrder()->first()->id,
+            
         ];
     }
 }
