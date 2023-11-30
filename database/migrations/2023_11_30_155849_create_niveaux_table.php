@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('niveaux', function (Blueprint $table) {
             $table->id();
+            $table->string('des_niveau');
+            $table->foreignId('gestion_droits_id');
             $table->timestamps();
         });
     }

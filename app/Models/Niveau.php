@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Niveau extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        "id",
+        "des_niveau",
+        "gestion_droits_id",
+    ];
+
+    public function gestion_droits(){
+        return $this->belongsTo(GestionDroit::class);
+    }
 }

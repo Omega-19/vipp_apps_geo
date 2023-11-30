@@ -17,7 +17,8 @@ class NiveauFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'des_niveau' => $this->faker->name(),
+            'gestion_droits_id' => rand(1, 9),
         ];
     }
 }
