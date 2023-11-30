@@ -14,7 +14,7 @@ class Niveau extends Model
         "gestion_droits_id",
     ];
 
-    public function gestion_droits(){
+    public function Gestion_droits(){
         return $this->belongsTo(GestionDroit::class);
     }
 }
